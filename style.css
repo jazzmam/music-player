@@ -13,7 +13,7 @@ body {
 
 .music-container {
 	background-color: #fff;
-	border-radius: 10%;
+	border-radius: 15px;
 	box-shadow: 0 20px 20px 0 rgba(0, 0, 255, .2);
 	display: flex;
 	padding: 50px 10px 30px;
@@ -85,8 +85,8 @@ body {
 	position: absolute;
 	top: 0;
 	left: 20px;
-	width: calc(100% - 2.7em);
-	padding: 5px;
+	width: calc(100% - 3.5em);
+	padding: 10px;
 	opacity: 0;
 	transform: translateY(0%);
 	transition: transform 0.3s ease-in, opacity 0.3s ease-in;
@@ -94,6 +94,7 @@ body {
 
 .music-info h4 {
 	padding: 0 0 0 12em;
+	margin: 0;
 }
 
 .music-container.play .music-info {
