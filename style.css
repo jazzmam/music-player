@@ -31,12 +31,13 @@ body {
 }
 
 .img-container img {
-	height: 13em;
+	height: 10em;
 	width: inherit;
 	border-radius: 50%;
+	object-fit: cover;
 	position: absolute;
-	bottom: 4.5em;
-	left: 5.7em;
+	bottom: 0;
+	left: 1.5em;
 	box-shadow: 0 20px 20px 0 rgba(0, 0, 255, .1);
 	animation: rotate 5s linear infinite;
 	animation-play-state: paused;
@@ -57,6 +58,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	z-index: 1;
+	margin: 0 0 0 10em;
 }
 
 .action-btn {
@@ -74,6 +76,29 @@ body {
 
 .action-btn.action-btn-big {
 	font-size: 2.6em;
+	color: #b1b1e6;
+}
+
+.music-info {
+	background-color: blueviolet;
+	border-radius: 15px 15px 0 0;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	width: calc(100% - 2.7em);
+	padding: 5px;
+	opacity: 0;
+	transform: translateY(0%);
+	transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.music-info h4 {
+	padding: 0 0 0 12em;
+}
+
+.music-container.play .music-info {
+	opacity: 1;
+	transform: translateY(-100%);
 }
 
 @media(max-width: 425px) and (orientation: portrait) {
