@@ -28,9 +28,12 @@ body {
 
 .img-container {
     position: relative;
+    margin: 1em 1em 1em 1.5em;
 }
 
 .img-container img {
+    height: 8em;
+    width: 8em;
     border-radius: 50%;
     animation: rotate 5s linear infinite;
     animation-play-state: paused;
@@ -58,5 +61,6 @@ body {
     border: 0;
     color: #c2c2f2;
     font-size: 2em;
-    cursor: url(your-image-path.png), auto;
+    cursor: pointer;
+    margin: 0 1.2em;
 }
