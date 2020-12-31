@@ -13,7 +13,7 @@ const songImage = document.getElementById('song-image');
 const songs = ['hey', 'summer', 'ukulele'];
 
 // Keeping track of song
-let songIndex = 2;
+let songIndex = 1;
 
 // Initially load song details into DOM
 laodSong(songs[songIndex]);
@@ -41,6 +41,28 @@ function pauseSong() {
 	audio.pause();
 }
 
+function previousSong() {
+	songIndex--;
+
+	if(songIndex < 0) {
+		songIndex = songs.length - 1;
+	}
+
+	laodSong(songs[songIndex]);
+	playSong();
+}
+
+function nextSong() {
+	songIndex++;
+
+	if(songIndex > songs.length - 1) {
+		songIndex = 0;
+	}
+
+	laodSong(songs[songIndex]);
+	playSong();
+}
+
 // Event listeners
 playButton.addEventListener('click', () => {
 	const isPlaying = musicContainer.classList.contains('play');
@@ -51,3 +73,8 @@ playButton.addEventListener('click', () => {
 		playSong();
 	}
 });
+
+// Change song
+
+previousButton.addEventListener('click', previousSong);
+nextButton.addEventListener('click', nextSong);
