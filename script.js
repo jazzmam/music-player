@@ -22,7 +22,13 @@ laodSong(songs[songIndex]);
 function laodSong(songTitle) {
 	title.innerText = songTitle;
 	audio.src = `music/${songTitle}.mp3`;
-	songImage.src = `img/${songTitle}.jpg`;
+
+	fetch(`https://dog.ceo/api/breeds/image/random`)
+	.then(res => res.json()
+	.then(data => {
+		const image = data.message;
+		songImage.src = `${image}`;
+	}));
 }
 
 function playSong() {
