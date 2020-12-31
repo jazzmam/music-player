@@ -67,9 +67,14 @@ function nextSong() {
 function updateProgress(e) {
 	const {duration, currentTime} = e.srcElement;
 	const progressPercent = currentTime * 100 / duration;
-	console.log(duration, currentTime);
-
 	progress.style.width = `${progressPercent}%`;
+}
+
+// Set progress bar
+function setProgress(){
+	const width = this.clientWidth;
+
+	console.log(width);
 }
 
 // Event listeners
@@ -89,3 +94,6 @@ nextButton.addEventListener('click', nextSong);
 
 // Time/song update
 audio.addEventListener('timeupdate', updateProgress);
+
+// Click on progress bar
+progressContainer.addEventListener('click', setProgress);
