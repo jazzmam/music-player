@@ -24,5 +24,15 @@ laodSong(songs[songIndex]);
 function laodSong(songTitle) {
 	title.innerText = songTitle;
 	audio.src = `music/${songTitle}.mp3`;
+	cover.src = `img/${songTitle}.mp3`;
 }
 
+
+// Event listeners
+playButton.addEventListener('click', () => {
+	const isPlaying = musicContainer.classList.contains('play');
+
+	if (isPlaying) {
+		pauseSong();
+	}
+});
